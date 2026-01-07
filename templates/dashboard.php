@@ -46,7 +46,7 @@ $mockgenie_images_per_page   = get_user_meta( $mockgenie_current_user_id, 'mg_im
         <!-- Generate Image Button -->
         <section class="mg_generate-section mg_tab-section" data-tab="generation">
             <div class="mg-action-buttons" style="margin-top:20px;">
-                <a href="http://test.local/wp-admin/upload.php" target="_blank" class="mg-btn mg-btn-primary">
+                <a href="<?php site_url() ?>/wp-admin/upload.php" target="_blank" class="mg-btn mg-btn-primary">
                     <?php esc_html_e( 'Generate Image', 'mockgenie' ); ?>
                 </a>
 
