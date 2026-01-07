@@ -1,0 +1,13 @@
+{
+    "name": "mahbub/mockgenie",
+    "description": "Generate and edit images inside WordPress with MockGenie AI",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "MockGenie\\": "includes/"
+        },
+        "files": [
+            "functions.php"
+        ]
+    }
+}

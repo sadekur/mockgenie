@@ -1,0 +1,11 @@
+# Composer vendor directory
+/vendor/
+
+# Composer files (optional: keep composer.json but ignore lock)
+composer.lock
+
+
+# OS files
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,1224 @@
+
+/* === Base Layout === */
+.mg_flip-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 420px;
+  margin: 60px auto;
+  position: relative;
+}
+
+.mg_flip-card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.mg_flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* === Front & Back Faces === */
+.mg_flip-front,
+.mg_flip-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.mg_flip-back {
+  transform: rotateY(180deg);
+}
+
+/* === Branding === */
+.mg_logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin-bottom: 20px;
+}
+
+.mg_logo-text {
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Headings & Text === */
+.mg_heading,
+.mg_create-container h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #222;
+}
+
+.mg_create-container p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* === Forms === */
+.mg_login-form,
+.mg_create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mg_input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.mg_input:focus {
+  border-color: #4f46e5;
+}
+
+/* === Buttons === */
+.mg_button {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mg_button:hover {
+  background-color: #4338ca;
+}
+
+/* === Links === */
+.mg_links {
+  margin-top: 15px;
+}
+
+.mg_links a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.mg_links a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .mg_flip-container {
+    margin: 40px auto;
+    max-width: 90%;
+  }
+
+  .mg_flip-front,
+  .mg_flip-back {
+    padding: 30px 20px;
+  }
+
+  .mg_logo {
+    font-size: 1.5rem;
+  }
+
+  .mg_heading,
+  .mg_create-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .mg_button {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mg_logo {
+    font-size: 1.3rem;
+  }
+
+  .mg_flip-front,
+  .mg_flip-back {
+    padding: 25px 15px;
+  }
+
+  .mg_input {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .mg_button {
+    font-size: 0.85rem;
+  }
+
+  .mg_links a {
+    font-size: 0.8rem;
+  }
+}
+
+/* === Flip Card Animation === */
+.mg_flip-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 420px;
+  margin: 60px auto;
+  position: relative;
+}
+
+.mg_flip-card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+/* This must match your JS toggle */
+.mg_flip-card.mg_flipped {
+  transform: rotateY(180deg);
+}
+
+/* Both sides of the card */
+.mg_flip-front,
+.mg_flip-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.mg_flip-back {
+  transform: rotateY(180deg);
+}
+
+
+/* ==========================================
+   Reset & Base Styles
+========================================== */
+.mg_container * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.mg_container {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Headers & Navigation
+========================================== */
+.mg_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky; /* or 'fixed' if you want it fixed on viewport */
+    top: 35px;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* keep it above other elements */
+    background-color: #fff; /* match your page background */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mg_header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mg_progress-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mg_progress-text {
+    font-size: 14px;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.mg_progress-bar {
+    width: 80px;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mg_progress-fill {
+    width: 60%;
+    height: 100%;
+    background-color: #10b981;
+    border-radius: 4px;
+}
+
+.mg_upgrade-btn {
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mg_upgrade-btn:hover {
+    background-color: #7c3aed;
+}
+
+/* Navigation Tabs */
+.mg_nav-tabs {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0 24px;
+}
+
+.mg_nav-tab {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    margin-right: 32px;
+    font-size: 14px;
+    color: #6b7280;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.mg_nav-tab.mg_active {
+    color: #8b5cf6;
+    border-bottom-color: #8b5cf6;
+}
+
+.mg_nav-tab:hover {
+    color: #374151;
+}
+
+/* ==========================================
+   Main Content
+========================================== */
+.mg_main-content {
+    padding: 24px;
+}
+
+/* Info Section */
+.mg_info-section {
+    background-color: #dbeafe;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+
+.mg_info-section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.mg_info-section p {
+    font-size: 14px;
+    color: #4b5563;
+}
+.mg_site-section {
+    background-color: #dbeafe;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+/* ==========================================
+   Service Section
+========================================== */
+.mg_service-section {
+    margin-bottom: 40px;
+}
+
+.mg_service-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.mg_service-option label,
+.mg_service-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.mg_service-label input[type="radio"] {
+    margin: 0;
+}
+
+.mg_badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mg_badge.mg_recommended {
+    background-color: #10b981;
+    color: white;
+}
+
+.mg_badge.mg_coming-soon {
+    background-color: #6b7280;
+    color: white;
+}
+
+.mg_option-description {
+    font-size: 14px;
+    color: #6b7280;
+    margin-left: 24px;
+    line-height: 1.5;
+}
+
+.mg_save-btn {
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mg_save-btn:hover {
+    background-color: #7c3aed;
+}
+
+/* ==========================================
+   History Section
+========================================== */
+.mg_history-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.mg_image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.mg_image-placeholder {
+    aspect-ratio: 1;
+    background-color: #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.mg_image-placeholder:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.mg_placeholder-icon {
+    width: 32px;
+    height: 32px;
+    color: #9ca3af;
+}
+
+/* Pagination */
+.mg_pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mg_page-btn {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mg_page-btn.mg_active {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.mg_page-btn:hover:not(.mg_active) {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.mg_page-dots {
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 0 4px;
+}
+
+/* ==========================================
+   Form Inputs & Buttons
+========================================== */
+.mg_form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.mg_input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #6b7280;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.mg_input:focus {
+    border-color: #9ca3af;
+}
+
+.mg_button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.mg_btn-save {
+    padding: 8px 24px;
+    background-color: #8b5cf6;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mg_btn-save:hover {
+    background-color: #4338ca;
+}
+
+.mg_btn-password {
+    padding: 8px 24px;
+    background-color: #ffffff;
+    color: #8b5cf6;
+    border: 1px solid #8b5cf6;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.mg_btn-password:hover {
+    background-color: #eef2ff;
+}
+
+/* ==========================================
+   Sections & Layouts
+========================================== */
+.mg_login-section {
+    width: 302px;
+}
+
+.mg_settings-section {
+    margin-top: 30px;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+@media (max-width: 640px) {
+    .mg_container {
+        max-width: 100%;
+    }
+
+    .mg_header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .mg_header-right {
+        gap: 12px;
+    }
+
+    .mg_progress-bar {
+        width: 60px;
+    }
+
+    .mg_nav-tabs {
+        padding: 0 20px;
+    }
+
+    .mg_nav-tab {
+        margin-right: 24px;
+    }
+
+    .mg_main-content {
+        padding: 20px;
+    }
+
+    .mg_image-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .mg_service-option label {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .mg_image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mg_header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .mg_header-right {
+        justify-content: space-between;
+    }
+}
+
+
+/*Loader*/
+
+.mg_loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.mg_loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e5e7eb;
+    border-top-color: #8b5cf6;
+    border-radius: 50%;
+    animation: mg_spin 1s linear infinite;
+}
+
+@keyframes mg_spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* Pagination Arrows */
+.mg_pagination .mg_page-btn {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mg_pagination .mg_page-btn.mg_active {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.mg_pagination .mg_page-btn:hover:not(.mg_active):not(:disabled) {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.mg_pagination .mg_page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Arrow Buttons */
+.mg_pagination .mg_prev,
+.mg_pagination .mg_next {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 14px;
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.mg_pagination .mg_prev:hover:not(:disabled),
+.mg_pagination .mg_next:hover:not(:disabled) {
+    background-color: #d1d5db;
+}
+
+.mg_pagination .mg_page-dots {
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 0 4px;
+}
+.mg_image-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.mg_image-popup .mg_popup-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mg_image-popup .mg_close-popup {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.mockgini-generate-btn{
+    margin: 11px auto !important;
+}
+
+/* Overlay */
+.mockgini-modal {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 100; /* ensure above admin bar */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Force Flex Centering */
+body.wp-admin .mockgini-modal {
+    display: none;
+    display: flex;
+}
+
+/* Modal Box */
+.mockgini-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 460px;
+    max-width: 95%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    animation: mockginiFadeIn 0.25s ease;
+    position: relative;
+}
+
+/* Close Button */
+.mockgini-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+}
+.mockgini-close:hover {
+    color: #000;
+}
+
+/* Buttons & Fields */
+#mockgini-prompt-text {
+    width: 100%;
+    height: 100px;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.mockgini-actions {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.mockgini-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.mockgini-loader .spinner {
+    border: 4px solid #eee;
+    border-top: 4px solid #007cba;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+@keyframes mockginiFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/*Poop up Modal code */
+
+.mg-confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.mg-confirm-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+.mg-confirm-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mg-confirm-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mg-confirm-actions .mg-button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Confirm Button - Green */
+#mg-confirm-yes {
+    background-color: #28a745;
+    color: #fff;
+}
+
+#mg-confirm-yes:hover {
+    background-color: #218838;
+}
+
+/* Cancel Button - Gray */
+#mg-confirm-no {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+#mg-confirm-no:hover {
+    background-color: #5a6268;
+}
+/* Container for buttons */
+.mg-action-buttons {
+    margin-top: 20px;
+}
+
+/* Base button styles */
+.mg-action-buttons .mg-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Primary button (Documentation) */
+.mg-action-buttons .mg-btn-primary {
+    background-color: #0073aa;
+    color: #ffffff;
+    border: 1px solid #0073aa;
+}
+
+.mg-action-buttons .mg-btn-primary:hover {
+    background-color: #005177;
+    border-color: #005177;
+    color: #ffffff;
+}
+
+/* Secondary button (Tutorial) */
+.mg-action-buttons .mg-btn-secondary {
+    background-color: #00a0d2;
+    color: #ffffff;
+    border: 1px solid #00a0d2;
+}
+
+.mg-action-buttons .mg-btn-secondary:hover {
+    background-color: #007fa6;
+    border-color: #007fa6;
+    color: #ffffff;
+}
+
+/* Spacing between buttons */
+.mg-action-buttons .mg-btn + .mg-btn {
+    margin-left: 10px;
+}
+
+.mockgeni-img-modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+}
+.mockgeni-img-modal-content {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+.mockgeni-close {
+    color: #555;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.mockgeni-close:hover {
+    color: #000;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* Modal buttons wrapper */
+.mockgeni-img-modal-content div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Common button style */
+.mockgeni-img-modal-content button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Regenerate button - blue */
+#mockgini-regenerate {
+    background-color: #0073aa;
+    color: #fff;
+}
+#mockgini-regenerate:hover {
+    background-color: #006799;
+}
+
+/* Save button - green */
+#mockgini-save {
+    background-color: #46b450;
+    color: #fff;
+}
+#mockgini-save:hover {
+    background-color: #3a9440;
+}
+
+/* Cancel button - red */
+.mockgini-img-close {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.mockgini-img-close:hover {
+    background-color: #c0392b; /* slightly darker red on hover */
+}
+Ã¢Å“â€¦ Note
+
+/* Optional: add focus outline for accessibility */
+.mockgeni-img-modal-content button:focus {
+    outline: 2px solid #333;
+}
+
+.mg_image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.mg_image-item {
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.mg_image-item img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.mg_image-item .mg_image-prompt {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #555;
+    word-break: break-word;
+}
+
+.mockgenie-img-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    overflow: auto;
+}
+
+.mockgenie-img-modal-content {
+    position: relative;
+    margin: 3% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.mockgini-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #e63946;
+}
+/* MockGenie â€” Simple, Clean Admin Notice */
+
+:root{
+  --mg-bg: #ffffff;
+  --mg-fg: #0f172a;      /* slate-900 */
+  --mg-muted: #64748b;   /* slate-500 */
+  --mg-border: #e5e7eb;  /* neutral border */
+  --mg-accent: #4f46e5;  /* indigo-600 */
+  --mg-radius: 12px;
+  --mg-shadow: 0 1px 2px rgba(15,23,42,.06);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --mg-bg: #0b1220;
+    --mg-fg: #e5e7eb;
+    --mg-muted: #93a3af;
+    --mg-border: #1f2937;
+    --mg-shadow: 0 1px 2px rgba(0,0,0,.35);
+  }
+}
+
+/* Container */
+.mockgenie-notice{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 14px 16px;
+  margin: 16px 0;
+  background: var(--mg-bg);
+  color: var(--mg-fg);
+  border: 1px solid var(--mg-border);
+  border-radius: var(--mg-radius);
+  box-shadow: var(--mg-shadow);
+}
+
+/* Text column */
+.mg-content{
+  display: grid;
+  gap: 4px;
+  min-width: 0; /* prevent overflow */
+}
+
+.mg-title{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--mg-fg);
+}
+
+.mg-text{
+  margin: 0;
+  font-size: 13px;
+  color: var(--mg-muted);
+}
+
+/* Button */
+.mg-button{
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  color: #fff !important;
+  background: var(--mg-accent);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(79,70,229,.25);
+  transition: transform .12s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.mg-button:hover{ transform: translateY(-1px); box-shadow: 0 6px 14px rgba(79,70,229,.28); }
+.mg-button:active{ transform: translateY(0); }
+
+.mg-button:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(79,70,229,.45);
+}
+
+.mg-arrow{ line-height: 1; font-size: 14px; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px){
+  .mockgenie-notice{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .mg-button{ transition: none; }
+}
+
+.mg_generate-section{
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+/* Logout/Delete Key Button Styling */
+.mg-btn-logout {
+    background-color: #ff4d4f;  /* Red background */
+    color: #ffffff;             /* White text */
+    border: none;
+    padding: 7px 23px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.mg-btn-logout:hover {
+    background-color: #e04345;  /* Slightly darker on hover */
+    transform: translateY(-2px);
+}
+
+.mg-btn-logout:active {
+    transform: translateY(0);
+}
